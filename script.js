@@ -75,11 +75,12 @@ function printGraft(data) {
         }, {
         fullWidth: true,
         chartPadding: {
-            right: 40
+            right: 90
         }
+        
         });
 }
-//getFilmsAndYear().then(data => printGraft(data));
+getFilmsAndYear().then(data => printGraft(data));
 
 
 // -----------EJERCICIO 2 ---------------
@@ -93,7 +94,7 @@ async function getPersonAndFlims() {
         console.error(error);
     }
 }
-//getPersonAndFlims().then(data => console.log(data));
+getPersonAndFlims().then(data => console.log(data));
 
 function printGraftPeople(data) {
     let people = [];
@@ -118,10 +119,15 @@ function printGraftPeople(data) {
     }, {
     seriesBarDistance: 10,
     reverseData: true,
-    horizontalBars: true,
     axisY: {
-        offset: 150
+        offset: 10,
+        onlyInteger: true,
+        low: 0,
+        high: 7
+    },
+    axisX: {
+        offset: 60
     }
     });
 }
-//getPersonAndFlims().then(data => printGraftPeople(data))
+getPersonAndFlims().then(data => printGraftPeople(data));
